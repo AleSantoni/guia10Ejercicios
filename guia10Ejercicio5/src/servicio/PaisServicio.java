@@ -74,19 +74,23 @@ al usuario.
         System.out.println("***************************************************");
 
         
-        System.out.println("Ingrese un país");
+        System.out.println("Ingrese un país a eliminar dentro de la lista ");
         String nombre = leer.next();
+        boolean encontrado=false;
         Iterator<String> it = paises.iterator();
             while (it.hasNext()) {
                 if (it.next().equalsIgnoreCase(nombre)) {
                     System.out.println("Se procedera a remover el pais elegido");
                     it.remove();
-                    System.out.println("Removido con exito");
-                    break;
-                } else {
-                    System.out.println("Fallo al remover el pais, No se encontro el pais en el conjunto");
+                    System.out.println("- " +nombre+" Removido con exito");
+                    encontrado =true;
                     break;
                 }
+               
+                   
+                }
+            if(!encontrado){
+                System.out.println("Error al eliminar / No se encontro  " +nombre+"  en la lista ");
             }
         System.out.println("");
         System.out.println("La Nueva Lista de Paises es");
